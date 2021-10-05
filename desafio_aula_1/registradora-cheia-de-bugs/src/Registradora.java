@@ -6,10 +6,10 @@ public class Registradora {
 
       // segundoBug();
 
-         terceiroBug();
+        // terceiroBug();
 
-       // quartoBug();
-        //quintoBug();
+       //quartoBug();
+        quintoBug();
          //sextoBug();
     }
 
