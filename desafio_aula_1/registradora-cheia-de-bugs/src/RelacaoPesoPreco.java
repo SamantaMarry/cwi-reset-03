@@ -8,7 +8,7 @@ public class RelacaoPesoPreco {
         }
 
         if ("torta".equals(item)) {
-            precoTotal = 96.00 * (qtd / 16);
+            precoTotal = 6.00 * qtd;
         }
 
         if ("leite".equals(item)) {
@@ -21,9 +21,8 @@ public class RelacaoPesoPreco {
 
         if ("sanduiche".equals(item)) {
             precoTotal = 4.5 * qtd;
-        }else{
-            System.out.println("Produto não cadastrado");
         }
+
 
         return precoTotal;
     }
