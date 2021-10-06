@@ -9,16 +9,21 @@ public class Registradora {
         // terceiroBug();
 
        //quartoBug();
-        quintoBug();
-         //sextoBug();
+        //quintoBug();
+        sextoBug();
     }
 
+
+
     private static double registrarItem(String item, int quantidade) {
+
+
         double precoItem = RelacaoPesoPreco.retornaPrecoProduto(item, quantidade);
+
 
         if (QuantidadeMinimaItem.precisaReposicao(item)) {
             if ("pao".equals(item) || "sanduiche".equals(item) || "torta".equals(item)) {
-                if (!DataProjeto.cozinhaEmFuncionamento()) {
+                if (!DataProjeto.cozinhaEmFuncionamento() ) {
                     System.out.println("Cozinha fechada!");
                 }
                 ReposicaoCozinha.reporItem(item);
@@ -26,6 +31,7 @@ public class Registradora {
 
             if ("leite".equals(item) || "cafe".equals(item)) {
                 ReposicaoFornecedor.reporItem(item);
+
             }
         }
 
@@ -85,7 +91,6 @@ public class Registradora {
         DataProjeto.criarDataComCozinhaFuncionando();
         String item = "pao";
         int quantidade = 10;
-
         double precoTotal = registrarItem(item, quantidade);
 
         System.out.println(String.format("Valor total: %.2f", precoTotal));

@@ -2,13 +2,13 @@ public class ReposicaoCozinha {
 
     static void reporItem(String item) {
         if ("pao".equals(item)) {
-            ItensPorQuantidade.pao = 3600;
+            EstoquePadaria.estoquePao = 60;
         }
         if ("torta".equals(item)) {
-            ItensPorQuantidade.fatiasTorta = 64;
+            EstoquePadaria.estoqueFatiasTorta = 64;
         }
         if ("sanduiche".equals(item)) {
-            ItensPorQuantidade.sanduiche = 20;
+            EstoquePadaria.estoqueSanduiche = 20;
         }
     }
 }

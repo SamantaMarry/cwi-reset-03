@@ -6,11 +6,11 @@ public class ReposicaoFornecedor {
         Random random = new Random();
 
         if ("leite".equals(item)) {
-            ItensPorQuantidade.leite = random.nextInt(40) + 10;
+            EstoquePadaria.estoqueLeite = random.nextInt(40) + 10;
         }
 
         if ("cafe".equals(item)) {
-            ItensPorQuantidade.cafe = random.nextInt(40) + 10;
+            EstoquePadaria.estoqueCafe = random.nextInt(40) + 10;
         }
     }
 }
