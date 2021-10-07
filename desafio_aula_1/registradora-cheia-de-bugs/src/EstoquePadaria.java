@@ -1,38 +1,47 @@
 public class EstoquePadaria {
 
-    public static int estoquePao;
-    public static int estoqueFatiasTorta;
-    public static int estoqueSanduiche;
-    public static int estoqueLeite;
-    public static int estoqueCafe;
 
-    public static int verificaEstoque (String item, int quantidade){
-        if ("pao".equals(item)) {
-            return estoquePao;
+    public static int estoquePao = 60;
+    public static int estoqueFatiasTorta = 64;
+    public static int estoqueSanduiche = 20;
+    public static int estoqueLeite = 50;
+    public static int estoqueCafe = 50;
+
+
+    public static boolean verificaEstoque(String item, int quantidade){
+
+        boolean temEstoque = true;
+
+        if ("pao".equals(item) && quantidade > estoquePao) {
+            temEstoque = false;
         }
 
-        if ("torta".equals(item)) {
-            return estoqueFatiasTorta;
+
+        if ("torta".equals(item) && quantidade > estoqueFatiasTorta) {
+            temEstoque = false;
         }
 
-        if ("sanduiche".equals(item)) {
-            return estoqueSanduiche;
+        if ("sanduiche".equals(item) && quantidade > estoqueSanduiche) {
+            temEstoque = false;
         }
 
-        if ("cafe".equals(item)) {
-            return estoqueCafe;
+        if ("cafe".equals(item) && quantidade > estoqueCafe) {
+            temEstoque = false;
         }
 
-        if ("leite".equals(item)) {
-            return estoqueLeite;
-        }else {
-            System.out.println("Item indisponível");
+        if ("leite".equals(item) && quantidade > estoqueLeite) {
+            temEstoque = false;
+        }
+        if (temEstoque){
+                baixarEstoque(item, quantidade);
         }
 
-        return 0;
+        return temEstoque;
+
     }
 
-    public static int baixarEstoque(String item, int quantidade){
+    public static void baixarEstoque(String item, int quantidade){
+
         if ("pao".equals(item)) {
             estoquePao -= quantidade;
         }
@@ -51,17 +60,14 @@ public class EstoquePadaria {
 
         if ("leite".equals(item)) {
             estoqueLeite -= quantidade;
-        }else {
-            System.out.println("Item indisponível");
         }
 
-
-        return quantidade;
     }
 
     public static void reporEstoque(String item, int quantidade){
         if ("pao".equals(item)) {
             estoquePao += quantidade;
+
         }
 
         if ("torta".equals(item)) {
@@ -70,6 +76,7 @@ public class EstoquePadaria {
 
         if ("sanduiche".equals(item)) {
             estoqueSanduiche += quantidade;
+
         }
 
         if ("cafe".equals(item)) {
@@ -78,8 +85,6 @@ public class EstoquePadaria {
 
         if ("leite".equals(item)) {
             estoqueLeite += quantidade;
-        }else {
-            System.out.println("Item indisponível");
         }
 
     }

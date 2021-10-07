@@ -2,40 +2,54 @@
 public class Registradora {
 
     public static void main(String[] args) {
-        //primeiroBug();
+      /*  primeiroBug();
 
-      // segundoBug();
+      segundoBug();
 
-        // terceiroBug();
+      terceiroBug();*/
 
        //quartoBug();
         //quintoBug();
         sextoBug();
+
+
+
     }
 
 
 
     private static double registrarItem(String item, int quantidade) {
+        boolean temEstoque = EstoquePadaria.verificaEstoque(item, quantidade);
+        double precoItem = 0;
+        if (!temEstoque) {
+            EstoquePadaria.baixarEstoque(item, quantidade);
 
+            if (QuantidadeMinimaItem.precisaReposicao(item)) {
+                if ("pao".equals(item) || "sanduiche".equals(item) || "torta".equals(item)) {
+                    if (!DataProjeto.cozinhaEmFuncionamento()) {
+                        System.out.println("Cozinha fechada! Item indisponível no momento!");
 
-        double precoItem = RelacaoPesoPreco.retornaPrecoProduto(item, quantidade);
+                    }
 
-
-        if (QuantidadeMinimaItem.precisaReposicao(item)) {
-            if ("pao".equals(item) || "sanduiche".equals(item) || "torta".equals(item)) {
-                if (!DataProjeto.cozinhaEmFuncionamento() ) {
-                    System.out.println("Cozinha fechada!");
+                    ReposicaoCozinha.reporItem(item);
+                    EstoquePadaria.reporEstoque(item, quantidade);
                 }
-                ReposicaoCozinha.reporItem(item);
-            }
 
-            if ("leite".equals(item) || "cafe".equals(item)) {
-                ReposicaoFornecedor.reporItem(item);
+                if ("leite".equals(item) || "cafe".equals(item)) {
+                    ReposicaoFornecedor.reporItem(item);
 
+
+                }
             }
+             System.out.println("Não possuimos estoque do produto");
+
+        } else {
+            precoItem = RelacaoPesoPreco.retornaPrecoProduto(item, quantidade);
+            return precoItem;
         }
 
-        return precoItem;
+       return precoItem;
+
     }
 
     private static void primeiroBug() {
