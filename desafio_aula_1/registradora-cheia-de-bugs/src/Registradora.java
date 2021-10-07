@@ -2,16 +2,23 @@
 public class Registradora {
 
     public static void main(String[] args) {
-      /*  primeiroBug();
-
-      segundoBug();
-
-      terceiroBug();*/
-
-       //quartoBug();
-        //quintoBug();
+        System.out.println("Primeiro Bug");
+        primeiroBug();
+        System.out.println("------------------------------------------");
+        System.out.println("segundo Bug");
+        segundoBug();
+        System.out.println("------------------------------------------");
+        System.out.println("terceiro Bug");
+        terceiroBug();
+        System.out.println("------------------------------------------");
+        System.out.println("quarto Bug");
+        quartoBug();
+        System.out.println("------------------------------------------");
+        System.out.println("quinto Bug");
+        quintoBug();
+        System.out.println("------------------------------------------");
+        System.out.println("sexto Bug");
         sextoBug();
-
 
 
     }
@@ -22,7 +29,6 @@ public class Registradora {
         boolean temEstoque = EstoquePadaria.verificaEstoque(item, quantidade);
         double precoItem = 0;
         if (!temEstoque) {
-            EstoquePadaria.baixarEstoque(item, quantidade);
 
             if (QuantidadeMinimaItem.precisaReposicao(item)) {
                 if ("pao".equals(item) || "sanduiche".equals(item) || "torta".equals(item)) {
@@ -30,9 +36,13 @@ public class Registradora {
                         System.out.println("Cozinha fechada! Item indisponível no momento!");
 
                     }
+                    else {
+                        ReposicaoCozinha.reporItem(item);
+                        precoItem = RelacaoPesoPreco.retornaPrecoProduto(item, quantidade);
+                        return precoItem;
+                    }
 
-                    ReposicaoCozinha.reporItem(item);
-                    EstoquePadaria.reporEstoque(item, quantidade);
+
                 }
 
                 if ("leite".equals(item) || "cafe".equals(item)) {
@@ -40,8 +50,8 @@ public class Registradora {
 
 
                 }
-            }
-             System.out.println("Não possuimos estoque do produto");
+            }else {System.out.println("Não possuimos estoque do produto");}
+
 
         } else {
             precoItem = RelacaoPesoPreco.retornaPrecoProduto(item, quantidade);

@@ -36,6 +36,7 @@ public class EstoquePadaria {
                 baixarEstoque(item, quantidade);
         }
 
+
         return temEstoque;
 
     }
