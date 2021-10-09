@@ -1,7 +1,8 @@
 public class Aplicação {
 
     public static void main(String[] args) {
-        Diretor diretor = new Diretor("Peter Jackson", 58, 17 );
+        Diretor diretor = new Diretor("Peter Jackson", 58, 17, Genero.MASCULINO);
+        diretor.imprimircaracteristicas();
 
 
 
@@ -14,5 +15,6 @@ public class Aplicação {
 
         oSenhordosAnéis.reproduzirOFilme();
         oHobbit.reproduzirOFilme();
+
     }
 }
