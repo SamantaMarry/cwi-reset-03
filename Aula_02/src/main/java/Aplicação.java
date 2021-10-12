@@ -1,12 +1,12 @@
-public class Aplicação {
+/*public class Aplicação {*/
 
-    public static void main(String[] args) {
+  /*  public static void main(String[] args) {
         Diretor diretor = new Diretor("Peter Jackson",, 17, Genero.MASCULINO);
         diretor.imprimircaracteristicas();
 
         Ator ator = new Ator("Teste",, 10, Genero.FEMININO);
         ator.imprimircaracteristicas();
-
+*/
 
 
 /*
@@ -19,5 +19,7 @@ public class Aplicação {
         oSenhordosAnéis.reproduzirOFilme();
         oHobbit.reproduzirOFilme();*/
 
+/*
     }
 }
+*/
