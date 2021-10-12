@@ -7,7 +7,10 @@ public class Filme {
     private Double notaDeAvaliação;
     private Diretor diretor;
 
-    public Filme(String nome, String descrição, Integer duraçao, Integer anoDeLançamento, Double notaDeAvaliaçãoDoFilme, Diretor diretor) {
+    public Filme(String nome, String descrição, Integer duraçao, Integer anoDeLançamento, Double notaDeAvaliaçãoDoFilme, Diretor diretor) throws AvaliacãoForaDoPadraoException {
+        if(anoDeLançamento > 5 || anoDeLançamento < 1){
+            throw new AvaliacãoForaDoPadraoException();
+        }
         this.nome = nome;
         this.descrição = descrição;
         this.duraçao = duraçao;

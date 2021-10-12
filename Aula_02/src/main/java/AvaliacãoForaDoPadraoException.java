@@ -1,2 +1,7 @@
-package PACKAGE_NAME;public class AvaliacãoForaDoPadraoException {
+public class AvaliacãoForaDoPadraoException extends Exception {
+
+    public AvaliacãoForaDoPadraoException(){
+        super("Avaliação inválida");
+    }
+
 }
