@@ -11,4 +11,7 @@ public class Ator extends Pessoa {
         super(id, nome, dataNascimento, anoInicioAtividade);
         this.statusCarreira = statusCarreira;
     }
+
+
+
 }
