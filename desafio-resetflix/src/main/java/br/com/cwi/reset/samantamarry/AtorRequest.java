@@ -5,17 +5,34 @@ import java.time.LocalDate;
 public class AtorRequest {
 
     private String nome;
-    private LocalDate dataNasicmento;
+    private LocalDate dataNascimento;
     private StatusCarreira statusCarreira;
     private Integer anoInicioAtividade;
 
-    public AtorRequest(String nome, LocalDate dataNasicmento, StatusCarreira statusCarreira, Integer anoInicioAtividade) {
+
+    public AtorRequest(String nome, LocalDate dataNascimento, StatusCarreira statusCarreira, Integer anoInicioAtividade) {
 
         this.nome = nome;
-        this.dataNasicmento = dataNasicmento;
+        this.dataNascimento = dataNascimento;
         this.statusCarreira = statusCarreira;
         this.anoInicioAtividade = anoInicioAtividade;
 
-       // criarAtor() // passar objeto ator
+
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public LocalDate getDataNascimento() {
+        return dataNascimento;
+    }
+
+    public StatusCarreira getStatusCarreira() {
+        return statusCarreira;
+    }
+
+    public Integer getAnoInicioAtividade() {
+        return anoInicioAtividade;
     }
 }

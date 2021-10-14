@@ -8,6 +8,8 @@ public class FakeDatabase {
     private List<Ator> atores = new ArrayList<>();
     private List<Diretor> diretores = new ArrayList<>();
 
+
+
     public void persisteAtor(Ator ator) {
         atores.add(ator);
     }
@@ -23,4 +25,5 @@ public class FakeDatabase {
     public List<Diretor> recuperaDiretores() {
         return diretores;
     }
+
 }

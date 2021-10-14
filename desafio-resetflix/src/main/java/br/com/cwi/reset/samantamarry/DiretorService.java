@@ -11,6 +11,9 @@ public class DiretorService {
     }
 
     public void cadastrarDiretor(DiretorRequest diretorRequest) {
+        Diretor diretor = new Diretor(diretorRequest.getNome(), diretorRequest.getDataNascimento(), diretorRequest.getAnoInicioAtividade());
+        fakeDatabase.persisteDiretor(diretor);
+
 
 
     }

@@ -7,11 +7,8 @@ public class Ator extends Pessoa {
     private StatusCarreira statusCarreira;
 
 
-    public Ator(Integer id, String nome, LocalDate dataNascimento, Integer anoInicioAtividade,StatusCarreira statusCarreira) {
-        super(id, nome, dataNascimento, anoInicioAtividade);
+    public Ator(String nome, LocalDate dataNascimento, Integer anoInicioAtividade, StatusCarreira statusCarreira) {
+        super(nome, dataNascimento, anoInicioAtividade);
         this.statusCarreira = statusCarreira;
     }
-
-
-
 }

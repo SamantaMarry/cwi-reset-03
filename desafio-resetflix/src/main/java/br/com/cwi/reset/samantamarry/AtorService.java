@@ -12,10 +12,9 @@ public class AtorService {
 
 
     public void criarAtor(AtorRequest atorRequest){
-        //fakeDatabase.persisteAtor(atorRequest); // passar atorRequest para a função persisteator que vai cuidar de inserir o ator no banco de dados
+        Ator ator = new Ator(atorRequest.getNome(), atorRequest.getDataNascimento(), atorRequest.getAnoInicioAtividade(), atorRequest.getStatusCarreira());
+        this.fakeDatabase.persisteAtor(ator);
 
-
-        // retornar mensagem de ator criado com sucesso
 
     }
 
