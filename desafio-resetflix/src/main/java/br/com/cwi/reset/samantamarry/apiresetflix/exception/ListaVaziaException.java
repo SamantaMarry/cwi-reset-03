@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(HttpStatus.BAD_REQUEST)
 public class ListaVaziaException extends RuntimeException{
-    public ListaVaziaException(String message) {
-        super(message);
+    public ListaVaziaException(String tipo, String tipoPlural) {
+        super(String.format("Nenhum %s cadastrado, favor cadastar %s.", tipo, tipoPlural));
     }
 }

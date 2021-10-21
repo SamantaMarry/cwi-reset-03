@@ -6,7 +6,9 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @ResponseStatus(HttpStatus.BAD_REQUEST)
 public class StatusCarreiraNãoInformadoException extends RuntimeException{
 
-    public StatusCarreiraNãoInformadoException(String message) {
-        super(message);
+    public StatusCarreiraNãoInformadoException(final String campo){
+        super("Campo obrigatório não informado. Favor informar o campo Status Carreira");
+
+
     }
 }
