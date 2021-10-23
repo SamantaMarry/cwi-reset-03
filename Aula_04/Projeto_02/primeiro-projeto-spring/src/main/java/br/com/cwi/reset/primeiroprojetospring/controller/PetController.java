@@ -1,5 +1,6 @@
 package br.com.cwi.reset.primeiroprojetospring.controller;
 import br.com.cwi.reset.primeiroprojetospring.domain.Pet;
+import br.com.cwi.reset.primeiroprojetospring.exception.PetExistenteException;
 import br.com.cwi.reset.primeiroprojetospring.exception.PetNaoExistenteException;
 import br.com.cwi.reset.primeiroprojetospring.service.PetService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,13 +27,13 @@ public class PetController {
 
     @GetMapping("/{nome}")
     public Pet getByNome(@PathVariable String nome) throws PetNaoExistenteException {
-        return (service.buscarPorNome(nome));
+        return (service.buscarPeloNome(nome));
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Pet cadastrarPet(@RequestBody Pet pet) throws PetNaoExistenteException {
-        return service.salvarPet(pet);
+    public Pet cadastrarPet(@RequestBody Pet pet) throws PetExistenteException{
+        return service.salvar(pet);
     }
 
     @PutMapping
@@ -44,6 +45,7 @@ public class PetController {
 
     @DeleteMapping("/{nome}")
     public void deletarPet(@PathVariable String nome) throws PetNaoExistenteException{
+        service.delete(nome);
 
         }
  }
