@@ -1,0 +1,39 @@
+2021-10-23 16:51:33 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ID[*]"; expected "INSERT"; SQL statement:
+ID [42001-200]
+2021-10-23 16:51:37 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ID[*] 1"; expected "INSERT"; SQL statement:
+ID 1 [42001-200]
+2021-10-23 16:51:38 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ID[*] 1"; expected "INSERT"; SQL statement:
+ID 1 [42001-200]
+2021-10-23 16:51:44 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ID[*] 1IDADE"; expected "INSERT"; SQL statement:
+ID 1IDADE [42001-200]
+2021-10-23 16:51:44 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ID[*] 1IDADE"; expected "INSERT"; SQL statement:
+ID 1IDADE [42001-200]
+2021-10-23 16:51:45 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ID[*] 1IDADE"; expected "INSERT"; SQL statement:
+ID 1IDADE [42001-200]
+2021-10-23 17:38:51 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ESPECIE[*]"; expected "EXPLAIN, EXECUTE"; SQL statement:
+ESPECIE [42001-200]
+2021-10-23 17:39:00 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * ESPECIE[*]"; SQL statement:
+SELECT * ESPECIE [42000-200]
+2021-10-23 17:39:01 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * ESPECIE[*]"; SQL statement:
+SELECT * ESPECIE [42000-200]
+2021-10-23 17:39:01 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * ESPECIE[*]"; SQL statement:
+SELECT * ESPECIE [42000-200]
+2021-10-23 17:39:01 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * ESPECIE[*]"; SQL statement:
+SELECT * ESPECIE [42000-200]
+2021-10-23 17:39:02 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * ESPECIE[*]"; SQL statement:
+SELECT * ESPECIE [42000-200]
+2021-10-23 17:39:02 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * ESPECIE[*]"; SQL statement:
+SELECT * ESPECIE [42000-200]
