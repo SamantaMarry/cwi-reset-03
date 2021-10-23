@@ -8,6 +8,7 @@ import br.com.cwi.reset.josealencar.service.AtorService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import javax.websocket.server.PathParam;
 import java.util.List;
 
@@ -23,7 +24,7 @@ public class AtorController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void criarAtor(@RequestBody AtorRequest atorRequest) throws Exception {
+    public void criarAtor(@RequestBody @Valid AtorRequest atorRequest) throws Exception {
         this.atorService.criarAtor(atorRequest);
     }
 
