@@ -1,4 +1,4 @@
-package br.com.cwi.reset.josealencar.exception;
+package br.com.cwi.reset.samantamarry.exception;
 
 public enum TipoDominioException {
 

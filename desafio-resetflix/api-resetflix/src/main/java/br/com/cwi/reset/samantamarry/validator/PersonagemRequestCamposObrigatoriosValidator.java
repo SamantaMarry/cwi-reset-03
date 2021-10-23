@@ -1,10 +1,10 @@
-package br.com.cwi.reset.josealencar.validator;
+package br.com.cwi.reset.samantamarry.validator;
 
-import br.com.cwi.reset.josealencar.exception.DescricaoPersonagemNaoInformadaException;
-import br.com.cwi.reset.josealencar.exception.IdAtorNaoInformadoException;
-import br.com.cwi.reset.josealencar.exception.NomeNaoInformadoException;
-import br.com.cwi.reset.josealencar.exception.TipoAtuacaoNaoInformadoException;
-import br.com.cwi.reset.josealencar.request.PersonagemRequest;
+import br.com.cwi.reset.samantamarry.exception.DescricaoPersonagemNaoInformadaException;
+import br.com.cwi.reset.samantamarry.exception.IdAtorNaoInformadoException;
+import br.com.cwi.reset.samantamarry.exception.NomeNaoInformadoException;
+import br.com.cwi.reset.samantamarry.exception.TipoAtuacaoNaoInformadoException;
+import br.com.cwi.reset.samantamarry.request.PersonagemRequest;
 
 import static java.util.Objects.isNull;
 

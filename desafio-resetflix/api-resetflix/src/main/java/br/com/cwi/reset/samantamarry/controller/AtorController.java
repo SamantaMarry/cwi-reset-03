@@ -1,15 +1,14 @@
-package br.com.cwi.reset.josealencar.controller;
+package br.com.cwi.reset.samantamarry.controller;
 
-import br.com.cwi.reset.josealencar.FakeDatabase;
-import br.com.cwi.reset.josealencar.model.Ator;
-import br.com.cwi.reset.josealencar.request.AtorRequest;
-import br.com.cwi.reset.josealencar.response.AtorEmAtividade;
-import br.com.cwi.reset.josealencar.service.AtorService;
+import br.com.cwi.reset.samantamarry.FakeDatabase;
+import br.com.cwi.reset.samantamarry.model.Ator;
+import br.com.cwi.reset.samantamarry.request.AtorRequest;
+import br.com.cwi.reset.samantamarry.response.AtorEmAtividade;
+import br.com.cwi.reset.samantamarry.service.AtorService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import javax.websocket.server.PathParam;
 import java.util.List;
 
 @RestController

@@ -1,10 +1,10 @@
-package br.com.cwi.reset.josealencar.service;
+package br.com.cwi.reset.samantamarry.service;
 
-import br.com.cwi.reset.josealencar.FakeDatabase;
-import br.com.cwi.reset.josealencar.exception.*;
-import br.com.cwi.reset.josealencar.model.Estudio;
-import br.com.cwi.reset.josealencar.request.EstudioRequest;
-import br.com.cwi.reset.josealencar.validator.EstudioRequestCamposObrigatoriosValidator;
+import br.com.cwi.reset.samantamarry.FakeDatabase;
+import br.com.cwi.reset.samantamarry.exception.*;
+import br.com.cwi.reset.samantamarry.model.Estudio;
+import br.com.cwi.reset.samantamarry.request.EstudioRequest;
+import br.com.cwi.reset.samantamarry.validator.EstudioRequestCamposObrigatoriosValidator;
 
 import java.time.LocalDate;
 import java.util.*;

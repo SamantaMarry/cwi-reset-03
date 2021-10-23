@@ -1,6 +1,6 @@
-package br.com.cwi.reset.josealencar;
+package br.com.cwi.reset.samantamarry;
 
-import br.com.cwi.reset.josealencar.model.*;
+import br.com.cwi.reset.samantamarry.model.*;
 
 import java.util.ArrayList;
 import java.util.List;

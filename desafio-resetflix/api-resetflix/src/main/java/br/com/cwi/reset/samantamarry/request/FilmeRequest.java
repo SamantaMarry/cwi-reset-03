@@ -1,8 +1,7 @@
-package br.com.cwi.reset.josealencar.request;
+package br.com.cwi.reset.samantamarry.request;
 
-import br.com.cwi.reset.josealencar.model.Genero;
+import br.com.cwi.reset.samantamarry.model.Genero;
 
-import java.io.Serializable;
 import java.util.List;
 
 public class FilmeRequest {

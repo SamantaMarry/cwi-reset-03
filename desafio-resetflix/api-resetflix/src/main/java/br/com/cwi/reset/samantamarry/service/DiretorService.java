@@ -1,10 +1,10 @@
-package br.com.cwi.reset.josealencar.service;
+package br.com.cwi.reset.samantamarry.service;
 
-import br.com.cwi.reset.josealencar.exception.*;
-import br.com.cwi.reset.josealencar.model.Diretor;
-import br.com.cwi.reset.josealencar.request.DiretorRequest;
-import br.com.cwi.reset.josealencar.FakeDatabase;
-import br.com.cwi.reset.josealencar.validator.BasicInfoRequiredValidator;
+import br.com.cwi.reset.samantamarry.exception.*;
+import br.com.cwi.reset.samantamarry.model.Diretor;
+import br.com.cwi.reset.samantamarry.request.DiretorRequest;
+import br.com.cwi.reset.samantamarry.FakeDatabase;
+import br.com.cwi.reset.samantamarry.validator.BasicInfoRequiredValidator;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package br.com.cwi.reset.josealencar.model;
+package br.com.cwi.reset.samantamarry.model;
 
 import javax.persistence.*;
 import java.util.Objects;

@@ -1,6 +1,6 @@
-package br.com.cwi.reset.josealencar.request;
+package br.com.cwi.reset.samantamarry.request;
 
-import br.com.cwi.reset.josealencar.model.StatusAtividade;
+import br.com.cwi.reset.samantamarry.model.StatusAtividade;
 
 import java.time.LocalDate;
 

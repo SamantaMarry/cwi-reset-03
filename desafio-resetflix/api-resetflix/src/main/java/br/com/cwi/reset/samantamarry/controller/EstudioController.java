@@ -1,9 +1,9 @@
-package br.com.cwi.reset.josealencar.controller;
+package br.com.cwi.reset.samantamarry.controller;
 
-import br.com.cwi.reset.josealencar.FakeDatabase;
-import br.com.cwi.reset.josealencar.model.Estudio;
-import br.com.cwi.reset.josealencar.request.EstudioRequest;
-import br.com.cwi.reset.josealencar.service.EstudioService;
+import br.com.cwi.reset.samantamarry.FakeDatabase;
+import br.com.cwi.reset.samantamarry.model.Estudio;
+import br.com.cwi.reset.samantamarry.request.EstudioRequest;
+import br.com.cwi.reset.samantamarry.service.EstudioService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 

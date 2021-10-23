@@ -1,6 +1,6 @@
-package br.com.cwi.reset.josealencar.validator;
+package br.com.cwi.reset.samantamarry.validator;
 
-import br.com.cwi.reset.josealencar.exception.*;
+import br.com.cwi.reset.samantamarry.exception.*;
 
 import java.time.LocalDate;
 

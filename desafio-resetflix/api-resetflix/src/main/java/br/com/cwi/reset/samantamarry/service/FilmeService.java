@@ -1,11 +1,11 @@
-package br.com.cwi.reset.josealencar.service;
+package br.com.cwi.reset.samantamarry.service;
 
-import br.com.cwi.reset.josealencar.FakeDatabase;
-import br.com.cwi.reset.josealencar.exception.*;
-import br.com.cwi.reset.josealencar.model.Filme;
-import br.com.cwi.reset.josealencar.model.Genero;
-import br.com.cwi.reset.josealencar.model.PersonagemAtor;
-import br.com.cwi.reset.josealencar.request.FilmeRequest;
+import br.com.cwi.reset.samantamarry.FakeDatabase;
+import br.com.cwi.reset.samantamarry.exception.*;
+import br.com.cwi.reset.samantamarry.model.Filme;
+import br.com.cwi.reset.samantamarry.model.Genero;
+import br.com.cwi.reset.samantamarry.model.PersonagemAtor;
+import br.com.cwi.reset.samantamarry.request.FilmeRequest;
 
 import java.util.*;
 

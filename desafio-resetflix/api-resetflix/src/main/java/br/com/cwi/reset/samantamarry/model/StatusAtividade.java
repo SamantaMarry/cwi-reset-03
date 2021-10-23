@@ -1,4 +1,4 @@
-package br.com.cwi.reset.josealencar.model;
+package br.com.cwi.reset.samantamarry.model;
 
 public enum StatusAtividade {
     EM_ATIVIDADE,

@@ -1,9 +1,9 @@
-package br.com.cwi.reset.josealencar.controller;
+package br.com.cwi.reset.samantamarry.controller;
 
-import br.com.cwi.reset.josealencar.FakeDatabase;
-import br.com.cwi.reset.josealencar.model.Filme;
-import br.com.cwi.reset.josealencar.request.FilmeRequest;
-import br.com.cwi.reset.josealencar.service.FilmeService;
+import br.com.cwi.reset.samantamarry.FakeDatabase;
+import br.com.cwi.reset.samantamarry.model.Filme;
+import br.com.cwi.reset.samantamarry.request.FilmeRequest;
+import br.com.cwi.reset.samantamarry.service.FilmeService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 

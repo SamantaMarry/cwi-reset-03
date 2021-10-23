@@ -1,4 +1,4 @@
-package br.com.cwi.reset.josealencar;
+package br.com.cwi.reset.samantamarry;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

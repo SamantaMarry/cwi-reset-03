@@ -1,11 +1,11 @@
-package br.com.cwi.reset.josealencar.service;
+package br.com.cwi.reset.samantamarry.service;
 
-import br.com.cwi.reset.josealencar.FakeDatabase;
-import br.com.cwi.reset.josealencar.exception.CanseiDeCriarExceptionCustomizadaException;
-import br.com.cwi.reset.josealencar.model.Ator;
-import br.com.cwi.reset.josealencar.model.PersonagemAtor;
-import br.com.cwi.reset.josealencar.request.PersonagemRequest;
-import br.com.cwi.reset.josealencar.validator.PersonagemRequestCamposObrigatoriosValidator;
+import br.com.cwi.reset.samantamarry.FakeDatabase;
+import br.com.cwi.reset.samantamarry.exception.CanseiDeCriarExceptionCustomizadaException;
+import br.com.cwi.reset.samantamarry.model.Ator;
+import br.com.cwi.reset.samantamarry.model.PersonagemAtor;
+import br.com.cwi.reset.samantamarry.request.PersonagemRequest;
+import br.com.cwi.reset.samantamarry.validator.PersonagemRequestCamposObrigatoriosValidator;
 
 import java.util.*;
 
@@ -56,7 +56,7 @@ public class PersonagemAtorService {
              * Que por sua vez chama o equals da classe da chave
              * Na prática:
              * PersonagemRequest.equals(PersonagemRequest);
-             * {@link br.com.cwi.reset.josealencar.request.PersonagemRequest#equals(Object)}
+             * {@link br.com.cwi.reset.samantamarry.request.PersonagemRequest#equals(Object)}
              */
             if (personagemRequestSet.contains(personagemRequest)) {
                 throw new CanseiDeCriarExceptionCustomizadaException("Não é permitido informar o mesmo ator/personagem mais de uma vez para o mesmo filme.");

@@ -1,13 +1,13 @@
-package br.com.cwi.reset.josealencar.service;
+package br.com.cwi.reset.samantamarry.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import br.com.cwi.reset.josealencar.FakeDatabase;
-import br.com.cwi.reset.josealencar.model.Ator;
-import br.com.cwi.reset.josealencar.model.StatusCarreira;
-import br.com.cwi.reset.josealencar.request.AtorRequest;
-import br.com.cwi.reset.josealencar.response.AtorEmAtividade;
+import br.com.cwi.reset.samantamarry.FakeDatabase;
+import br.com.cwi.reset.samantamarry.model.Ator;
+import br.com.cwi.reset.samantamarry.model.StatusCarreira;
+import br.com.cwi.reset.samantamarry.request.AtorRequest;
+import br.com.cwi.reset.samantamarry.response.AtorEmAtividade;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

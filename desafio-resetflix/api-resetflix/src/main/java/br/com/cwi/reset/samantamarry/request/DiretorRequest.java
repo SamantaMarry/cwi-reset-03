@@ -1,4 +1,4 @@
-package br.com.cwi.reset.josealencar.request;
+package br.com.cwi.reset.samantamarry.request;
 
 import java.time.LocalDate;
 

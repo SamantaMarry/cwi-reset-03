@@ -1,8 +1,7 @@
-package br.com.cwi.reset.josealencar.request;
+package br.com.cwi.reset.samantamarry.request;
 
-import br.com.cwi.reset.josealencar.model.StatusCarreira;
+import br.com.cwi.reset.samantamarry.model.StatusCarreira;
 
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import java.time.LocalDate;

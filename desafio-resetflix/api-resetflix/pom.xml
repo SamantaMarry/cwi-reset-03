@@ -8,7 +8,7 @@
         <version>2.5.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>br.com.cwi.reset.josealencar</groupId>
+    <groupId>br.com.cwi.reset.samantamarry</groupId>
     <artifactId>api-resetflix</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>api-resetflix</name>
