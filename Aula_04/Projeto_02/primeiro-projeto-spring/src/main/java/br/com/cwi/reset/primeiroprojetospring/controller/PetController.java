@@ -2,6 +2,7 @@ package br.com.cwi.reset.primeiroprojetospring.controller;
 import br.com.cwi.reset.primeiroprojetospring.domain.Pet;
 import br.com.cwi.reset.primeiroprojetospring.exception.PetNaoExistenteException;
 import br.com.cwi.reset.primeiroprojetospring.service.PetService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +15,8 @@ import java.util.List;
 @RequestMapping("/pet")
 public class PetController {
 
-    private PetService service = new PetService();
+    @Autowired
+    private PetService service;
 
 
     @GetMapping
