@@ -5,6 +5,7 @@ import br.com.cwi.reset.samantamarry.model.Ator;
 import br.com.cwi.reset.samantamarry.request.AtorRequest;
 import br.com.cwi.reset.samantamarry.response.AtorEmAtividade;
 import br.com.cwi.reset.samantamarry.service.AtorService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,11 +16,9 @@ import java.util.List;
 @RequestMapping("/atores")
 public class AtorController {
 
+    @Autowired
     private AtorService atorService;
 
-    public AtorController() {
-        this.atorService = new AtorService(FakeDatabase.getInstance());
-    }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
@@ -28,17 +27,17 @@ public class AtorController {
     }
 
     @GetMapping(path = "/em_atividade")
-    public List<AtorEmAtividade> listarAtoresEmAtividade(@RequestParam String filtroNome) throws Exception {
+    public List<AtorEmAtividade> listarAtoresEmAtividade(@RequestParam @Valid String filtroNome) throws Exception {
         return this.atorService.listarAtoresEmAtividade(filtroNome);
     }
 
     @GetMapping(path = "/{id}")
-    public Ator consultarAtor(@PathVariable Integer id) throws Exception {
+    public Ator consultarAtor(@PathVariable @Valid Integer id) throws Exception {
         return this.atorService.consultarAtor(id);
     }
 
     @GetMapping
     public List<Ator> consultarAtores() throws Exception {
-        return this.atorService.consultarAtores();
+        return this.atorService.listarTodos();
     }
 }

@@ -4,46 +4,37 @@ import br.com.cwi.reset.samantamarry.FakeDatabase;
 import br.com.cwi.reset.samantamarry.exception.*;
 import br.com.cwi.reset.samantamarry.model.Ator;
 import br.com.cwi.reset.samantamarry.model.StatusCarreira;
+import br.com.cwi.reset.samantamarry.repository.AtorRepositoryBd;
 import br.com.cwi.reset.samantamarry.request.AtorRequest;
 import br.com.cwi.reset.samantamarry.response.AtorEmAtividade;
 import br.com.cwi.reset.samantamarry.validator.BasicInfoRequiredValidator;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+@Service
 public class AtorService {
 
-    private FakeDatabase fakeDatabase;
-
-    public AtorService(FakeDatabase fakeDatabase) {
-        this.fakeDatabase = fakeDatabase;
-    }
+    @Autowired
+    private AtorRepositoryBd repository;
 
     public void criarAtor(AtorRequest atorRequest) throws Exception {
-        new BasicInfoRequiredValidator().accept(atorRequest.getNome(), atorRequest.getDataNascimento(), atorRequest.getAnoInicioAtividade(), TipoDominioException.ATOR);
 
-        if (atorRequest.getStatusCarreira() == null) {
-            throw new StatusCarreiraNaoInformadoException();
-        }
-
-        final List<Ator> atoresCadastrados = fakeDatabase.recuperaAtores();
+        final List<Ator> atoresCadastrados = repository.findAll();
 
         for (Ator atorCadastrado : atoresCadastrados) {
             if (atorCadastrado.getNome().equalsIgnoreCase(atorRequest.getNome())) {
                 throw new CadastroDuplicadoException(TipoDominioException.ATOR.getSingular(), atorRequest.getNome());
             }
         }
-
-        final Integer idGerado = atoresCadastrados.size() + 1;
-
-        final Ator ator = new Ator(idGerado, atorRequest.getNome(), atorRequest.getDataNascimento(), atorRequest.getStatusCarreira(), atorRequest.getAnoInicioAtividade());
-
-        fakeDatabase.persisteAtor(ator);
+        repository.save(atorRequest);
     }
 
-    public List<AtorEmAtividade> listarAtoresEmAtividade(String filtroNome) throws Exception {
-        final List<Ator> atoresCadastrados = fakeDatabase.recuperaAtores();
+        public List<AtorEmAtividade> listarAtoresEmAtividade(String filtroNome) throws Exception {
+        final List<Ator> atoresCadastrados = repository.findAll();
 
         if (atoresCadastrados.isEmpty()) {
             throw new ListaVaziaException(TipoDominioException.ATOR.getSingular(), TipoDominioException.ATOR.getPlural());
@@ -76,12 +67,7 @@ public class AtorService {
     }
 
     public Ator consultarAtor(Integer id) throws Exception {
-        if (id == null) {
-            throw new IdNaoInformado();
-        }
-
-        final List<Ator> atores = fakeDatabase.recuperaAtores();
-
+        final List<Ator> atores = repository.findAll();
         for (Ator ator : atores) {
             if (ator.getId().equals(id)) {
                 return ator;
@@ -91,8 +77,8 @@ public class AtorService {
         throw new ConsultaIdInvalidoException(TipoDominioException.ATOR.getSingular(), id);
     }
 
-    public List<Ator> consultarAtores() throws Exception {
-        final List<Ator> atores = fakeDatabase.recuperaAtores();
+    public List<Ator> listarTodos() throws Exception {
+        final List<Ator> atores = repository.findAll();
 
         if (atores.isEmpty()) {
             throw new ListaVaziaException(TipoDominioException.ATOR.getSingular(), TipoDominioException.ATOR.getPlural());

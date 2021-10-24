@@ -163,7 +163,7 @@ public class AtorServiceTest {
         String expected = "Já existe um ator cadastrado para o nome will smith.";
         assertEquals(expected, e.getMessage());
 
-        assertEquals(1, atorService.consultarAtores().size());
+        assertEquals(1, atorService.listarTodos().size());
     }
 
     @Test
@@ -176,7 +176,7 @@ public class AtorServiceTest {
 
         atorService.criarAtor(atorRequest);
 
-        assertEquals(1, atorService.consultarAtores().size());
+        assertEquals(1, atorService.listarTodos().size());
     }
 
     @Test
@@ -285,7 +285,7 @@ public class AtorServiceTest {
     public void deveRetornarErroQuandoNenhumAtorCadastradoNaConsultaDeTodosAtores() throws Exception {
         Exception e = assertThrows(
                 Exception.class,
-                () -> atorService.consultarAtores(),
+                () -> atorService.listarTodos(),
                 "Esperado exceção de nenhum ator cadastrado."
         );
         String expected = "Nenhum ator cadastrado, favor cadastar atores.";
@@ -316,7 +316,7 @@ public class AtorServiceTest {
         atorService.criarAtor(atorRequest2);
         atorService.criarAtor(atrizRequest);
 
-        List<Ator> atores = atorService.consultarAtores();
+        List<Ator> atores = atorService.listarTodos();
 
         assertEquals(3, atores.size());
     }
