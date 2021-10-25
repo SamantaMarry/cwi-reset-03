@@ -1,3 +1,4 @@
+/*
 package br.com.cwi.reset.samantamarry.controller;
 
 import br.com.cwi.reset.samantamarry.FakeDatabase;
@@ -33,3 +34,4 @@ public class FilmeController {
         return filmeService.consultarFilmes(nomeFilme, nomeDiretor, nomePersonagem, nomeAtor);
     }
 }
+*/

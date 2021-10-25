@@ -1,3 +1,4 @@
+/*
 package br.com.cwi.reset.samantamarry.controller;
 
 import br.com.cwi.reset.samantamarry.FakeDatabase;
@@ -35,3 +36,4 @@ public class EstudioController {
         return estudioService.consultarEstudio(id);
     }
 }
+*/

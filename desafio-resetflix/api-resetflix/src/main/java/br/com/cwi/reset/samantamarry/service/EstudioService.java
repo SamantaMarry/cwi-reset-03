@@ -1,4 +1,4 @@
-package br.com.cwi.reset.samantamarry.service;
+/*package br.com.cwi.reset.samantamarry.service;
 
 import br.com.cwi.reset.samantamarry.FakeDatabase;
 import br.com.cwi.reset.samantamarry.exception.*;
@@ -74,4 +74,4 @@ public class EstudioService {
         return repository.findAll();
     }
 
-}
+}*/

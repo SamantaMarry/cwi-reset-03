@@ -1,3 +1,4 @@
+/*
 package br.com.cwi.reset.samantamarry.service;
 
 import br.com.cwi.reset.samantamarry.FakeDatabase;
@@ -46,7 +47,8 @@ public class PersonagemAtorService {
         for (PersonagemRequest personagemRequest : personagens) {
             new PersonagemRequestCamposObrigatoriosValidator().accept(personagemRequest);
 
-            /**
+            */
+/**
              * A linha: "if (personagemRequestSet.contains(personagemRequest))"
              *
              * Cai na implementação do Set abaixo
@@ -57,7 +59,8 @@ public class PersonagemAtorService {
              * Na prática:
              * PersonagemRequest.equals(PersonagemRequest);
              * {@link br.com.cwi.reset.samantamarry.request.PersonagemRequest#equals(Object)}
-             */
+             *//*
+
             if (personagemRequestSet.contains(personagemRequest)) {
                 throw new CanseiDeCriarExceptionCustomizadaException("Não é permitido informar o mesmo ator/personagem mais de uma vez para o mesmo filme.");
             } else {
@@ -78,3 +81,4 @@ public class PersonagemAtorService {
         return personagensAtores;
     }
  }
+*/

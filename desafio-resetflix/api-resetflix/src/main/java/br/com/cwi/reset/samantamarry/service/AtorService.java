@@ -1,15 +1,14 @@
 package br.com.cwi.reset.samantamarry.service;
 
-import br.com.cwi.reset.samantamarry.FakeDatabase;
 import br.com.cwi.reset.samantamarry.exception.*;
 import br.com.cwi.reset.samantamarry.model.Ator;
 import br.com.cwi.reset.samantamarry.model.StatusCarreira;
 import br.com.cwi.reset.samantamarry.repository.AtorRepositoryBd;
 import br.com.cwi.reset.samantamarry.request.AtorRequest;
 import br.com.cwi.reset.samantamarry.response.AtorEmAtividade;
-import br.com.cwi.reset.samantamarry.validator.BasicInfoRequiredValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,16 +20,18 @@ public class AtorService {
     @Autowired
     private AtorRepositoryBd repository;
 
-    public void criarAtor(AtorRequest atorRequest) throws Exception {
-
+    public Ator criarAtor(AtorRequest atorRequest) throws Exception {
         final List<Ator> atoresCadastrados = repository.findAll();
 
         for (Ator atorCadastrado : atoresCadastrados) {
             if (atorCadastrado.getNome().equalsIgnoreCase(atorRequest.getNome())) {
                 throw new CadastroDuplicadoException(TipoDominioException.ATOR.getSingular(), atorRequest.getNome());
             }
+
         }
-       // repository.save(atorRequest);
+        Ator ator = new Ator(atorRequest.getNome(), atorRequest.getDataNascimento(), atorRequest.getStatusCarreira(), atorRequest.getAnoInicioAtividade());
+        repository.save(ator);
+        return ator;
     }
 
         public List<AtorEmAtividade> listarAtoresEmAtividade(String filtroNome) throws Exception {

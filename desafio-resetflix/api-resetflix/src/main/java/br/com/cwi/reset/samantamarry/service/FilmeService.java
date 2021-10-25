@@ -1,3 +1,4 @@
+/*
 package br.com.cwi.reset.samantamarry.service;
 
 import br.com.cwi.reset.samantamarry.FakeDatabase;
@@ -164,3 +165,4 @@ public class FilmeService {
         return filmeFiltrado;
     }
 }
+*/
