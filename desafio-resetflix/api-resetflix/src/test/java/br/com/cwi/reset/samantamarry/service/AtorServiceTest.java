@@ -19,10 +19,10 @@ public class AtorServiceTest {
 
     private AtorService atorService;
 
-    @BeforeEach
+    /*@BeforeEach
     public void setUp() {
         atorService = new AtorService(FakeDatabase.getInstance());
-    }
+    }*/
 
     @Test
     public void deveRetornarErroQuandoNomeNulo() {

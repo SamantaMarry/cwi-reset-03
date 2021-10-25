@@ -30,7 +30,7 @@ public class AtorService {
                 throw new CadastroDuplicadoException(TipoDominioException.ATOR.getSingular(), atorRequest.getNome());
             }
         }
-        repository.save(atorRequest);
+       // repository.save(atorRequest);
     }
 
         public List<AtorEmAtividade> listarAtoresEmAtividade(String filtroNome) throws Exception {

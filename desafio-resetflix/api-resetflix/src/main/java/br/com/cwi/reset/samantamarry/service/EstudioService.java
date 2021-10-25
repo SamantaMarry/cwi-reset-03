@@ -3,26 +3,28 @@ package br.com.cwi.reset.samantamarry.service;
 import br.com.cwi.reset.samantamarry.FakeDatabase;
 import br.com.cwi.reset.samantamarry.exception.*;
 import br.com.cwi.reset.samantamarry.model.Estudio;
+import br.com.cwi.reset.samantamarry.repository.EstudioRepositoryBd;
 import br.com.cwi.reset.samantamarry.request.EstudioRequest;
 import br.com.cwi.reset.samantamarry.validator.EstudioRequestCamposObrigatoriosValidator;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.*;
 
 import static java.util.Objects.isNull;
 
+@Service
 public class EstudioService {
 
-    private FakeDatabase fakeDatabase;
+    @Autowired
+    private EstudioRepositoryBd repository;
 
-    public EstudioService(final FakeDatabase fakeDatabase) {
-        this.fakeDatabase = fakeDatabase;
-    }
 
     public void criarEstudio(EstudioRequest estudioRequest) throws Exception {
         new EstudioRequestCamposObrigatoriosValidator().accept(estudioRequest);
 
-        final List<Estudio> estudiosCadastrados = fakeDatabase.recuperaEstudios();
+        List<Estudio> estudiosCadastrados = repository.findAll();
 
         for (Estudio estudioCadastrado : estudiosCadastrados) {
             if (estudioCadastrado.getNome().equalsIgnoreCase(estudioRequest.getNome())) {
@@ -36,13 +38,11 @@ public class EstudioService {
 
         final Integer idGerado = estudiosCadastrados.size() + 1;
 
-        final Estudio estudio = new Estudio(idGerado, estudioRequest.getNome(), estudioRequest.getDescricao(), estudioRequest.getDataCriacao(), estudioRequest.getStatusAtividade());
-
-        fakeDatabase.persisteEstudio(estudio);
+        repository.save(estudioRequest);
     }
 
     public List<Estudio> consultarEstudios(String filtroNome) throws Exception {
-        final List<Estudio> estudiosCadastrados = fakeDatabase.recuperaEstudios();
+        List<Estudio> estudiosCadastrados = repository.findAll();
         final List<Estudio> estudios = new ArrayList<>();
 
         if (estudiosCadastrados.isEmpty()) {
@@ -71,13 +71,7 @@ public class EstudioService {
             throw new IdNaoInformado();
         }
 
-        return fakeDatabase.recuperaEstudios()
-                .stream().filter(e -> e.getId().equals(id))
-                .findFirst()
-                .orElseThrow(() ->
-                        new ConsultaIdInvalidoException(
-                                TipoDominioException.ESTUDIO.getSingular(),
-                                id)
-                );
+        return repository.findAll();
     }
+
 }

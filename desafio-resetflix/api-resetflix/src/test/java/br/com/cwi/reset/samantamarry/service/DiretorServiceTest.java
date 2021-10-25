@@ -16,11 +16,11 @@ import java.util.List;
 public class DiretorServiceTest {
 
     private DiretorService diretorService;
-
+/*
     @BeforeEach
     public void setUp() {
         diretorService = new DiretorService(FakeDatabase.getInstance());
-    }
+    }*/
 
     @Test
     public void deveRetornarErroQuandoNomeNulo() {

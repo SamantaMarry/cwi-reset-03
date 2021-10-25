@@ -4,30 +4,30 @@ import br.com.cwi.reset.samantamarry.FakeDatabase;
 import br.com.cwi.reset.samantamarry.exception.CanseiDeCriarExceptionCustomizadaException;
 import br.com.cwi.reset.samantamarry.model.Ator;
 import br.com.cwi.reset.samantamarry.model.PersonagemAtor;
+import br.com.cwi.reset.samantamarry.repository.AtorRepositoryBd;
 import br.com.cwi.reset.samantamarry.request.PersonagemRequest;
 import br.com.cwi.reset.samantamarry.validator.PersonagemRequestCamposObrigatoriosValidator;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.*;
 
+@Service
 public class PersonagemAtorService {
 
-    private FakeDatabase fakeDatabase;
+    @Autowired
+    private AtorRepositoryBd repository;
     private AtorService atorService;
 
-    public PersonagemAtorService(FakeDatabase fakeDatabase) {
-        this.fakeDatabase = fakeDatabase;
-        this.atorService = new AtorService(fakeDatabase);
-    }
+
 
     public PersonagemAtor cadastrarPersonagemAtor(PersonagemRequest personagemRequest) throws Exception {
         new PersonagemRequestCamposObrigatoriosValidator().accept(personagemRequest);
 
-        final Integer idGerado = fakeDatabase.recuperaPersonagens().size() + 1;
         final Ator ator = atorService.consultarAtor(personagemRequest.getIdAtor());
 
-        final PersonagemAtor personagemAtor = new PersonagemAtor(idGerado, ator, personagemRequest.getNomePersonagem(), personagemRequest.getDescricaoPersonagem(), personagemRequest.getTipoAtuacao());
 
-        fakeDatabase.persistePersonagem(personagemAtor);
+        repository.save(personagemRequest);
 
         return personagemAtor;
     }
