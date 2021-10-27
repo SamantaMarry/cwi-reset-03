@@ -1,11 +1,10 @@
 package br.com.cwi.reset.samantamarry.service;
 
 import br.com.cwi.reset.samantamarry.exception.*;
+import br.com.cwi.reset.samantamarry.model.Ator;
 import br.com.cwi.reset.samantamarry.model.Diretor;
 import br.com.cwi.reset.samantamarry.repository.DiretorRepositoryBd;
 import br.com.cwi.reset.samantamarry.request.DiretorRequest;
-import br.com.cwi.reset.samantamarry.FakeDatabase;
-import br.com.cwi.reset.samantamarry.validator.BasicInfoRequiredValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,7 +19,7 @@ public class DiretorService {
     private DiretorRepositoryBd repository;
 
 
-    public void cadastrarDiretor(DiretorRequest diretorRequest) throws Exception {
+    public Diretor cadastrarDiretor(DiretorRequest diretorRequest) throws Exception {
 
         final List<Diretor> diretoresCadastrados = repository.findAll();
 
@@ -29,8 +28,9 @@ public class DiretorService {
                 throw new CadastroDuplicadoException(TipoDominioException.DIRETOR.getSingular(), diretorRequest.getNome());
             }
         }
-
-        //repository.save(diretorRequest);
+        Diretor diretor = new Diretor(diretorRequest.getNome(), diretorRequest.getDataNascimento(), diretorRequest.getAnoInicioAtividade());
+        repository.save(diretor);
+        return diretor;
 
     }
 
@@ -76,4 +76,5 @@ public class DiretorService {
 
         throw new ConsultaIdInvalidoException(TipoDominioException.DIRETOR.getSingular(), id);
     }
+
 }

@@ -1,6 +1,5 @@
 package br.com.cwi.reset.samantamarry.controller;
 
-import br.com.cwi.reset.samantamarry.FakeDatabase;
 import br.com.cwi.reset.samantamarry.model.Ator;
 import br.com.cwi.reset.samantamarry.request.AtorRequest;
 import br.com.cwi.reset.samantamarry.response.AtorEmAtividade;

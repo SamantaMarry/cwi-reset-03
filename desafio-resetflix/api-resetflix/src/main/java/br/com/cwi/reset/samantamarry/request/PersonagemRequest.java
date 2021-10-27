@@ -2,12 +2,22 @@ package br.com.cwi.reset.samantamarry.request;
 
 import br.com.cwi.reset.samantamarry.model.TipoAtuacao;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
 public class PersonagemRequest {
+    @NotEmpty
+    @NotNull(message = "Campo obrigatório não informado. Favor informar o id do Ator")
     private Integer idAtor;
+    @NotEmpty
+    @NotNull(message = "Campo obrigatório não informado. Favor informar o Nome do Personagem")
     private String nomePersonagem;
+    @NotEmpty
+    @NotNull(message = "Campo obrigatório não informado. Favor informar a Descrição do Personagem")
     private String descricaoPersonagem;
+    @NotEmpty
+    @NotNull(message = "Campo obrigatório não informado. Favor informar o Tipo de Atuação")
     private TipoAtuacao tipoAtuacao;
 
     public PersonagemRequest(Integer idAtor, String nomePersonagem, String descricaoPersonagem, TipoAtuacao tipoAtuacao) {

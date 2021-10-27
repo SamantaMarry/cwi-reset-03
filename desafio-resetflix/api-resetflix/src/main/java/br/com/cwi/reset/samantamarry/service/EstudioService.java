@@ -1,11 +1,9 @@
-/*package br.com.cwi.reset.samantamarry.service;
 
-import br.com.cwi.reset.samantamarry.FakeDatabase;
+package br.com.cwi.reset.samantamarry.service;
 import br.com.cwi.reset.samantamarry.exception.*;
 import br.com.cwi.reset.samantamarry.model.Estudio;
 import br.com.cwi.reset.samantamarry.repository.EstudioRepositoryBd;
 import br.com.cwi.reset.samantamarry.request.EstudioRequest;
-import br.com.cwi.reset.samantamarry.validator.EstudioRequestCamposObrigatoriosValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,9 +20,7 @@ public class EstudioService {
 
 
     public void criarEstudio(EstudioRequest estudioRequest) throws Exception {
-        new EstudioRequestCamposObrigatoriosValidator().accept(estudioRequest);
-
-        List<Estudio> estudiosCadastrados = repository.findAll();
+        final List<Estudio> estudiosCadastrados = repository.findAll();
 
         for (Estudio estudioCadastrado : estudiosCadastrados) {
             if (estudioCadastrado.getNome().equalsIgnoreCase(estudioRequest.getNome())) {
@@ -35,10 +31,9 @@ public class EstudioService {
         if (LocalDate.now().isBefore(estudioRequest.getDataCriacao())) {
             throw new CanseiDeCriarExceptionCustomizadaException("Não é possível cadastrar estúdios do futuro.");
         }
+        Estudio estudio = new Estudio(estudioRequest.getNome(), estudioRequest.getDescricao(), estudioRequest.getDataCriacao(), estudioRequest.getStatusAtividade());
 
-        final Integer idGerado = estudiosCadastrados.size() + 1;
-
-        repository.save(estudioRequest);
+        repository.save(estudio);
     }
 
     public List<Estudio> consultarEstudios(String filtroNome) throws Exception {
@@ -67,11 +62,13 @@ public class EstudioService {
     }
 
     public Estudio consultarEstudio(Integer id) throws Exception {
-        if (isNull(id)) {
-            throw new IdNaoInformado();
+        final List<Estudio> estudios = repository.findAll();
+        for(Estudio estudio : estudios){
+            if (estudio.getId().equals(id)){
+                return estudio;
+            }
         }
-
-        return repository.findAll();
+        throw new ConsultaIdInvalidoException(TipoDominioException.ESTUDIO.getSingular(), id);
     }
 
-}*/
+}
