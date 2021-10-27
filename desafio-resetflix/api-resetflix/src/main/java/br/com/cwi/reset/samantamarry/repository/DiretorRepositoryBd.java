@@ -10,5 +10,7 @@ import java.util.List;
 @Repository
 public interface DiretorRepositoryBd extends CrudRepository<Diretor, Integer> {
     List<Diretor> findAll();
+    Diretor findByNomeEqualsIgnoreCase(String nome);
+    List<Diretor> findByNomeContainingIgnoreCase(String nome);
 
 }

@@ -9,14 +9,15 @@ import java.time.LocalDate;
 
 public class DiretorRequest {
 
-    @NotEmpty
+
     @NotNull(message = "Campo obrigatório não informado. Favor informar o campo Nome.")
     private String nome;
-    @NotEmpty
+
+
     @NotNull(message = "Campo obrigatório não informado. Favor informar o campo Data de Nascimento.")
     @Past(message = "Não é possível cadastrar não nascidos.")
     private LocalDate dataNascimento;
-    @NotEmpty
+
     @NotNull(message = "Campo obrigatório não informado. Favor informar o campo Ano Inicio de Atividade.")
     private Integer anoInicioAtividade;
 

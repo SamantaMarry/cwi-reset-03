@@ -13,6 +13,7 @@ public class Diretor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     private String nome;
     private LocalDate dataNascimento;
     private Integer anoInicioAtividade;

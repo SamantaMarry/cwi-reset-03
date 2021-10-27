@@ -1,7 +1,6 @@
 package br.com.cwi.reset.samantamarry.service;
 
 import br.com.cwi.reset.samantamarry.exception.*;
-import br.com.cwi.reset.samantamarry.model.Ator;
 import br.com.cwi.reset.samantamarry.model.Diretor;
 import br.com.cwi.reset.samantamarry.repository.DiretorRepositoryBd;
 import br.com.cwi.reset.samantamarry.request.DiretorRequest;
@@ -19,7 +18,7 @@ public class DiretorService {
     private DiretorRepositoryBd repository;
 
 
-    public Diretor cadastrarDiretor(DiretorRequest diretorRequest) throws Exception {
+    public void cadastrarDiretor(DiretorRequest diretorRequest) throws Exception {
 
         final List<Diretor> diretoresCadastrados = repository.findAll();
 
@@ -30,7 +29,6 @@ public class DiretorService {
         }
         Diretor diretor = new Diretor(diretorRequest.getNome(), diretorRequest.getDataNascimento(), diretorRequest.getAnoInicioAtividade());
         repository.save(diretor);
-        return diretor;
 
     }
 
